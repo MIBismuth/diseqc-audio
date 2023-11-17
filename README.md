@@ -2,6 +2,32 @@
 
 Simple python script to send commands to a DiSEqC Motor via audio output. This was designed to control a Sattelite Positioner with a Raspberry Pi.
 
+## Prerequisites
+
+Before running the script, make sure you have the following installed:
+
+- Python 3
+- `wave` module (usually included in Python standard library)
+- `subprocess` module (usually included in Python standard library)
+- `play` command-line tool for playing audio files (you can install it using a package manager like `apt`)
+
+Additionaly, you will have to build a Bias Tee circuit and connect it to the jack out of your computer/RaspberryPi.
+
+## Usage
+
+1. Connect the Bias Tee circuit to the jack audio output of your machine and to the coaxial cable of the Sattelite Positioner.
+
+1. Run the script by executing the following command in your terminal:
+
+    ```bash
+    python script_name.py
+    ```
+
+2. Enter the desired angle when prompted.
+
+3. The script will generate a wave file named `binary_wave.wav` and play it using the `play` command.
+
+
 ## DiSEqC Protocol
 
 "The DiSEqC system is a communication bus between satellite receivers and
