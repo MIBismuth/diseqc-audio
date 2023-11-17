@@ -77,8 +77,15 @@ wave_ module. This is accomplished by sampling a 20kHz sine wave at
 object. Finally, the _wav_ file is saved and a macro is invoked to play
 it and transmit the control data.
 
-![Section of the Signal.](./images/osc0V.JPG)
-![Close Up of The Signal.](./images/osc0V+.JPG)
+
+<p float="left">
+  <img src="./images/osc0V.JPG" width="45%" />
+  <img src="./images/osc0V+.JPG" width="45%" />
+</p>
+
+**Figure: Transmitted Control Signal.** The data-bit structure is evident in the left figure. The figure on the right shows that the signal has the correct frequency.
+
+
 
 **Figure: Transmitted Control Signal.** The data-bit structure is evident in the left figure. The figure on the right shows that the signal has the correct frequency.
 
