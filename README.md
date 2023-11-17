@@ -111,7 +111,22 @@ tee_ circuit was employed.
   <img src="./images/osc12V+.JPG" alt="Close Up of The Signal" width="45%" />
 </p>
 
-**Figure: Transmitted Control Signal After Implementing BiasTee. Now the fundamental characteristics of the signal stay the same, but offset by 12V.**
+**Figure: Transmitted Control Signal After Implementing BiasTee.** Now the fundamental characteristics of the signal stay the same, but offset by 12V.
 
 
 Inspecting the signal on, it looks identical to the one on, the only difference being the $12V$ DC offset (the mean is now $12.1V$ instead of $1.41mV$), just as intended.
+
+
+## Authors
+
+MIBismuth
+
+## References
+
+### DiSEqC™ Specification
+
+- **Title**: Digital Satellite Equipment Control (DiSEqC™) - Bus Functional Specification (V4.2)
+- **Author**: European Telecommunications Satellite Organization
+- **Year**: 1998
+- **How Published**: PDF document
+- **URL**: [DiSEqC™ Specification](https://blog.solidsignal.com/wp-content/uploads/2019/04/bus_spec.pdf)
