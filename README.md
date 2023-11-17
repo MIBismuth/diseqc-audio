@@ -58,7 +58,6 @@ Looking at what each of those blocks represent:
 - _E/D XX.X_ - _E_ denotes "east of 0" and _D_ "west of 0", while
   _XX.X_ is the target angle, in hexadecimal.
 
-
 ### Audio Signal
 
 In order to generate the control signal, the Raspberry Pi’s built-in
@@ -77,15 +76,10 @@ wave_ module. This is accomplished by sampling a 20kHz sine wave at
 object. Finally, the _wav_ file is saved and a macro is invoked to play
 it and transmit the control data.
 
-
 <p float="left">
   <img src="./images/osc0V.JPG" width="45%" />
   <img src="./images/osc0V+.JPG" width="45%" />
 </p>
-
-**Figure: Transmitted Control Signal.** The data-bit structure is evident in the left figure. The figure on the right shows that the signal has the correct frequency.
-
-
 
 **Figure: Transmitted Control Signal.** The data-bit structure is evident in the left figure. The figure on the right shows that the signal has the correct frequency.
 
@@ -112,7 +106,12 @@ tee_ circuit was employed.
 
 **Figure: Implemented Bias Tee Circuit.** This circuit allows a control signal to be offset by a DC Voltage, in this case 12V
 
-Inspecting the signal on, it looks identical to the
-one on, the only difference being
-the $12V$ DC offset (the mean is now $12.1V$ instead of $1.41mV$),
-just as intended.
+<p align="center">
+  <img src="./images/osc12V.JPG" alt="Section of the Signal (All 0 Bits)" width="45%" />
+  <img src="./images/osc12V+.JPG" alt="Close Up of The Signal" width="45%" />
+</p>
+
+**Figure: Transmitted Control Signal After Implementing BiasTee. Now the fundamental characteristics of the signal stay the same, but offset by 12V.**
+
+
+Inspecting the signal on, it looks identical to the one on, the only difference being the $12V$ DC offset (the mean is now $12.1V$ instead of $1.41mV$), just as intended.
