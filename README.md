@@ -58,6 +58,9 @@ Looking at what each of those blocks represent:
 - _E/D XX.X_ - _E_ denotes "east of 0" and _D_ "west of 0", while
   _XX.X_ is the target angle, in hexadecimal.
 
+
+### Audio Signal
+
 In order to generate the control signal, the Raspberry Pi’s built-in
 audio driver and 3.5mm jack output were used. This might seem like an
 unconventional decision, but it is actually a solid solution. Audio
@@ -65,8 +68,6 @@ drivers are generally rated to generate signals with a frequency range
 of 20-20kHz, the human hearing range, the upper limit of which is our
 target. Also, the peak-peak voltage outputted is within our desired
 specifications, as we’ll see further.
-
-### Audio Signal
 
 This _python_ script receives the hexadecimal string with the
 instructions and parses it into binary. Next, this bit-data
