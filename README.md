@@ -76,8 +76,9 @@ wave_ module. This is accomplished by sampling a 20kHz sine wave at
 object. Finally, the _wav_ file is saved and a macro is invoked to play
 it and transmit the control data.
 
-![Section of the Signal.](./images/osc0V.JPG){width=45%}
-![Close Up of The Signal.](./images/osc0V+.JPG){width=45%}
+![Section of the Signal.](./images/osc0V.JPG)
+![Close Up of The Signal.](./images/osc0V+.JPG)
+
 **Figure: Transmitted Control Signal.** The data-bit structure is evident in the left figure. The figure on the right shows that the signal has the correct frequency.
 
 Looking at the output signal, the bit-data structure is
@@ -100,6 +101,7 @@ signal on the same coaxial cable. In order to set this DC bias, a _bias
 tee_ circuit was employed.
 
 ![Bias Tee Circuit](./images/biastee.png)
+
 **Figure: Implemented Bias Tee Circuit.** This cir-
 cuit allows a control signal to be offset by a DC
 Voltage, in this case 12V
