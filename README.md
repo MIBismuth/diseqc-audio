@@ -103,9 +103,7 @@ tee_ circuit was employed.
 
 ![Bias Tee Circuit](./images/biastee.png)
 
-**Figure: Implemented Bias Tee Circuit.** This cir-
-cuit allows a control signal to be offset by a DC
-Voltage, in this case 12V
+**Figure: Implemented Bias Tee Circuit.** This circuit allows a control signal to be offset by a DC Voltage, in this case 12V
 
 Inspecting the signal on, it looks identical to the
 one on, the only difference being
