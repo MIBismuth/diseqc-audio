@@ -20,7 +20,7 @@ Additionaly, you will have to build a Bias Tee circuit and connect it to the jac
 1. Run the script by executing the following command in your terminal:
 
     ```bash
-    python script_name.py
+    python angle_diseqc.py
     ```
 
 2. Enter the desired angle when prompted.
