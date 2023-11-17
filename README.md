@@ -119,7 +119,7 @@ Inspecting the signal on, it looks identical to the one on, the only difference 
 
 ## Authors
 
-MIBismuth
+- MIBismuth
 
 ## References
 
