@@ -68,68 +68,43 @@ specifications, as we’ll see further.
 
 ### Audio Signal
 
-A *python* script that receives the hexadecimal string with the
-instructions and parses it into binary was written. Next, this bit-data
-is fed into a function that generates a *wav* file, using *python’s
-wave* module. This is accomplished by sampling a 20kHz sine wave at
-198kHz sampling rate, for the right durations
-(Fig.<a href="#fig:bitdata" data-reference-type="ref"
-data-reference="fig:bitdata">2</a>) and appending it to our *Wave_write*
-object. Finally, the *wav* file is saved and a macro is invoked to play
+This _python_ script receives the hexadecimal string with the
+instructions and parses it into binary. Next, this bit-data
+is fed into a function that generates a _wav_ file, using _python’s
+wave_ module. This is accomplished by sampling a 20kHz sine wave at
+198kHz sampling rate, for the right durations and appending it to our _Wave_write_
+object. Finally, the _wav_ file is saved and a macro is invoked to play
 it and transmit the control data.
 
-Looking at the output signal
-(Fig.<a href="#fig:osc0V-" data-reference-type="ref"
-data-reference="fig:osc0V-">[fig:osc0V-]</a>), the bit-data structure is
+![Section of the Signal.](./images/osc0V.JPG){width=45%}
+![Close Up of The Signal.](./images/osc0V+.JPG){width=45%}
+**Figure: Transmitted Control Signal.** The data-bit structure is evident in the left figure. The figure on the right shows that the signal has the correct frequency.
+
+Looking at the output signal, the bit-data structure is
 clearly identifiable (1110111 on this example). Furthermore, upon closer
-examination of the carrier signal (Fig.
-<a href="#fig:osc0V+" data-reference-type="ref"
-data-reference="fig:osc0V+">[fig:osc0V+]</a>), three notable
+examination of the carrier signal, three notable
 observations come to light:
 
--   It is 512*m**V* peak-peak, which indeed is within our desired range;
+- It is $512mV$ peak-peak, which indeed is within our desired range;
 
--   It is 19.86kHz, which is also within our desired range and 0.7%
-    deviated from the expected 20kHz;
+- It is $19.86kHz$, which is also within our desired range and 0.7%
+  deviated from the expected $20kHz$;
 
--   It’s arithmetic mean is 1.41*m**V*, which, given the sinusoidal
-    nature of the signal, results in a near-zero voltage centering.
+- It’s arithmetic mean is $1.41mV$, which, given the sinusoidal
+  nature of the signal, results in a near-zero voltage centering.
 
 ### Bias Tee
 
 As mentioned previously, DiSEqC runs both the 12V DC and the control
-signal on the same coaxial cable. In order to set this DC bias, a *bias
-tee* circuit was employed
-(Fig.<a href="#fig:biastee" data-reference-type="ref"
-data-reference="fig:biastee">[fig:biastee]</a>).
+signal on the same coaxial cable. In order to set this DC bias, a _bias
+tee_ circuit was employed.
 
-<div class="circuitikz">
+![Bias Tee Circuit](./images/biastee.png)
+**Figure: Implemented Bias Tee Circuit.** This cir-
+cuit allows a control signal to be offset by a DC
+Voltage, in this case 12V
 
-(0,2) to \[V, l= 12*V*\] (0,4) to \[L, l= 1*m**H*, -\*\] (4,4) to
-\[short, -o\] (5, 4) (0,2) to (0,1) node\[ground\] (0,2) to \[short,
-\*-\*\] (2, 2) to \[C, l\_ = 300*n**F*\] (2, 0) to \[vsourcesin, l\_
-=*C**o**n**t**r**o**l* *S**i**g**n**a**l*\] (4,0) to \[C, l\_ =
-300*n**F*\] (4, 2) to \[short, -\*\] (4,4) (2,2) to \[short, -o\] (5, 2)
-(5,2) to \[open, v^\>=*C**o**n**t**r**o**l* *S**i**g**n**a**l* + 12*V*\]
-(5,4);
-
-</div>
-
-Inspecting the signal on
-Fig.<a href="#fig:osc12V" data-reference-type="ref"
-data-reference="fig:osc12V">[fig:osc12V]</a>, it looks identical to the
-one on Fig.<a href="#fig:osc0V" data-reference-type="ref"
-data-reference="fig:osc0V">[fig:osc0V]</a>, the only difference being
-the 12*V* DC offset (the mean is now 12.1*V* instead of 1.41*m**V*),
+Inspecting the signal on, it looks identical to the
+one on, the only difference being
+the $12V$ DC offset (the mean is now $12.1V$ instead of $1.41mV$),
 just as intended.
-
-We can calculate the impedance of the capacitor, *X*<sub>*C*</sub>, and
-the impedance of the inductor, *X*<sub>*L*</sub> through the following:
-
-$$X_C = \\frac{1}{w C} = \\frac{1}{2\\pi f C} = \\frac{1}{2\\pi \\cdot 20kHz \\cdot 300nF} = 26.5\\Omega
-  \\label{eq:impedanceC}$$
-
-*X*<sub>*L*</sub> = *w**L* = 2*π**f**L* = 2*π* ⋅ 20*k**H**z* ⋅ 1*m**H* = 125.7*Ω*
-Where *f* is the signalling frequency, 20*k**H**z*.
-
-
